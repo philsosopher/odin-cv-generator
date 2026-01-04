@@ -45,3 +45,11 @@
     - lists of achievements
 
 
+## Random thoughts
+- Reference site: https://cv-builder-khantzawphyo.vercel.app/editor
+- Load sample data
+- clear data
+- export
+
+
+
