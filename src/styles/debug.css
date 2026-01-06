@@ -1,0 +1,6 @@
+/* Debug styles - adds red outline to all elements */
+* {
+  outline: 1px solid red;
+}
+
+

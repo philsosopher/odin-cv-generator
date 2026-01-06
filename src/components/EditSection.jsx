@@ -1,9 +1,12 @@
+import Tabs from './Tabs';
+import WorkExperience from './WorkExperience';
+
 const EditSection = () => {
     return (
-        <>
-        <Tabs />
-        <WorkExperience />
-        </>
+        <div className="edit-section">
+            <Tabs />
+            <WorkExperience />
+        </div>
     );
 }
 

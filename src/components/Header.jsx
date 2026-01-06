@@ -1,8 +1,8 @@
 const Header = () => {
     return (
-        <>
-        <h1>CV Generator</h1>
-        </>
+        <header className="header">
+            <h1>CV Generator</h1>
+        </header>
     );
 }
 

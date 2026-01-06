@@ -1,3 +1,5 @@
+import WorkExperienceList from './WorkExperienceList';
+
 const WorkExperience = () => {
   return (
     <>

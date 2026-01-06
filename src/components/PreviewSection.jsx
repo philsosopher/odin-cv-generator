@@ -1,8 +1,8 @@
 const PreviewSection = () => {
     return (
-        <>
-        <div>PreviewSection</div>
-        </>
+        <div className="preview-section">
+            <h2>Preview</h2>
+        </div>
     );
 }
 

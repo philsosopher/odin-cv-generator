@@ -1,9 +1,12 @@
+import EditSection from './EditSection';
+import PreviewSection from './PreviewSection';
+
 const MainSection = () => {
     return (
-        <>
-        <EditSection />
-        <PreviewSection />
-        </>
+        <div className="main-section">
+            <EditSection />
+            <PreviewSection />
+        </div>
     );
 }
 
