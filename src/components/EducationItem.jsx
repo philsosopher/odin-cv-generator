@@ -1,4 +1,4 @@
-const WorkExperienceItem = ({ item, onDelete, onUpdate }) => {
+const EducationItem = ({ item, onDelete, onUpdate }) => {
   const handleDelete = () => {
     onDelete(item.id);
   };
@@ -9,36 +9,36 @@ const WorkExperienceItem = ({ item, onDelete, onUpdate }) => {
   }
 
   return (
-    <div className="work-experience-item">
-      <div className="work-experience-header">
-        <h3>Work Experience</h3>
+    <div className="education-item">
+      <div className="education-header">
+        <h3>Education</h3>
         <button
           className="delete-btn"
           onClick={handleDelete}
-          aria-label="Delete work experience"
+          aria-label="Delete education"
         >
           ×
         </button>
       </div>
 
       <div className="form-group">
-        <label>Company</label>
+        <label>Institute</label>
         <input
           type="text"
-          name="company"
-          placeholder="Company Name"
-          value={item.company}
+          name="institute"
+          placeholder="Name of Institute"
+          value={item.institute}
           onChange={handleUpdate}
         />
       </div>
 
       <div className="form-group">
-        <label>Position</label>
+        <label>Degree</label>
         <input
           type="text"
-          name="position"
-          placeholder="Job Title"
-          value={item.position}
+          name="degree"
+          placeholder="Degree or Course Name"
+          value={item.degree}
           onChange={handleUpdate}
         />
       </div>
@@ -67,29 +67,32 @@ const WorkExperienceItem = ({ item, onDelete, onUpdate }) => {
         </div>
       </div>
 
-      <div className="form-group">
-        <label>Location</label>
-        <input
-          type="text"
-          name="location"
-          placeholder="City, Country"
-          value={item.location}
-          onChange={handleUpdate}
-        />
-      </div>
+      <div className="form-row">
+        <div className="form-group">
+          <label>Location</label>
+          <input
+            type="text"
+            name="location"
+            placeholder="City, Country"
+            value={item.location}
+            onChange={handleUpdate}
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Description</label>
-        <textarea
-          name="description"
-          rows="4"
-          placeholder="Describe your responsibilities and achievements..."
-          value={item.description}
-          onChange={handleUpdate}
-        />
+        <div className="form-group">
+          <label>Grade/CGPA</label>
+          <input
+            type="text"
+            name="grade"
+            placeholder="e.g., 3.8 GPA or 85%"
+            value={item.grade}
+            onChange={handleUpdate}
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default WorkExperienceItem;
+export default EducationItem;
+

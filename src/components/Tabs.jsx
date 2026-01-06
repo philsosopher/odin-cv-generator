@@ -1,11 +1,23 @@
-const Tabs = () => {
+const Tabs = ({ activeTab, onTabChange }) => {
+    const tabs = [
+        { id: 'work-experience', label: 'Work Experience' },
+        { id: 'education', label: 'Education' },
+        { id: 'projects', label: 'Projects' },
+        { id: 'skills', label: 'Skills' },
+        { id: 'achievements', label: 'Achievements' },
+    ];
+
     return (
         <div className="tabs">
-            <button>Work Experience</button>
-            <button>Education</button>
-            <button>Projects</button>
-            <button>Skills</button>
-            <button>Achievements</button>
+            {tabs.map((tab) => (
+                <button
+                    key={tab.id}
+                    className={activeTab === tab.id ? 'active' : ''}
+                    onClick={() => onTabChange(tab.id)}
+                >
+                    {tab.label}
+                </button>
+            ))}
         </div>
     );
 }
