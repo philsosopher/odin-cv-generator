@@ -1,10 +1,9 @@
 const Tabs = ({ activeTab, onTabChange }) => {
     const tabs = [
+        { id: 'personal-details', label: 'Personal Details' },
         { id: 'work-experience', label: 'Work Experience' },
         { id: 'education', label: 'Education' },
-        { id: 'projects', label: 'Projects' },
         { id: 'skills', label: 'Skills' },
-        { id: 'achievements', label: 'Achievements' },
     ];
 
     return (
