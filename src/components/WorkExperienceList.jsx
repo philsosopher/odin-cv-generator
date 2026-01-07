@@ -1,41 +1,17 @@
-import { useState } from 'react';
 import WorkExperienceItem from './WorkExperienceItem';
 
-const WorkExperienceList = () => {
-  const [workExperienceItems, setWorkExperienceItems] = useState([]);
-
-  const addWorkExperienceItem = () => {
-    const newItem = {
-      id: crypto.randomUUID(),
-      company: '',
-      position: '',
-      startDate: '',
-      endDate: '',
-      location: '',
-      description: '',
-    };
-    setWorkExperienceItems([...workExperienceItems, newItem]);
-  };
-
-  const updateWorkExperienceItem = (id, updatedItem) => {
-    setWorkExperienceItems(workExperienceItems.map((item) => item.id === id ? updatedItem : item));
-  };
-
-  const deleteWorkExperienceItem = (id) => {
-    setWorkExperienceItems(workExperienceItems.filter((item) => item.id !== id));
-  };
-
+const WorkExperienceList = ({ items, onAdd, onUpdate, onDelete }) => {
   return (
     <div className="work-experience-list">
-      {workExperienceItems.map((item) => (
+      {items.map((item) => (
         <WorkExperienceItem
           key={item.id}
           item={item}
-          onDelete={deleteWorkExperienceItem}
-          onUpdate={updateWorkExperienceItem}
+          onDelete={onDelete}
+          onUpdate={onUpdate}
         />
       ))}
-      <button className="add-btn" onClick={addWorkExperienceItem}>
+      <button className="add-btn" onClick={onAdd}>
         + Add Work Experience
       </button>
       {/* TEMP: Display current array for debugging */}
@@ -52,7 +28,7 @@ const WorkExperienceList = () => {
             borderRadius: "6px"
           }}
         >
-          {JSON.stringify(workExperienceItems, null, 2)}
+          {JSON.stringify(items, null, 2)}
         </pre>
       </div>
     </div>

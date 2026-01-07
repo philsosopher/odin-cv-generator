@@ -1,41 +1,17 @@
-import { useState } from 'react';
 import EducationItem from './EducationItem';
 
-const EducationList = () => {
-  const [educationItems, setEducationItems] = useState([]);
-
-  const addEducationItem = () => {
-    const newItem = {
-      id: crypto.randomUUID(),
-      institute: '',
-      degree: '',
-      startDate: '',
-      endDate: '',
-      location: '',
-      grade: '',
-    };
-    setEducationItems([...educationItems, newItem]);
-  };
-
-  const updateEducationItem = (id, updatedItem) => {
-    setEducationItems(educationItems.map((item) => item.id === id ? updatedItem : item));
-  };
-
-  const deleteEducationItem = (id) => {
-    setEducationItems(educationItems.filter((item) => item.id !== id));
-  };
-
+const EducationList = ({ items, onAdd, onUpdate, onDelete }) => {
   return (
     <div className="education-list">
-      {educationItems.map((item) => (
+      {items.map((item) => (
         <EducationItem
           key={item.id}
           item={item}
-          onDelete={deleteEducationItem}
-          onUpdate={updateEducationItem}
+          onDelete={onDelete}
+          onUpdate={onUpdate}
         />
       ))}
-      <button className="add-btn" onClick={addEducationItem}>
+      <button className="add-btn" onClick={onAdd}>
         + Add Education
       </button>
       {/* TEMP: Display current array for debugging */}
@@ -52,7 +28,7 @@ const EducationList = () => {
             borderRadius: "6px"
           }}
         >
-          {JSON.stringify(educationItems, null, 2)}
+          {JSON.stringify(items, null, 2)}
         </pre>
       </div>
     </div>
