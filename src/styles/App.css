@@ -257,8 +257,10 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  align-items: center;
+  padding: 2rem 1rem;
   overflow-y: auto;
+  background-color: #606060;
 }
 
 .preview-section h2 {
@@ -278,12 +280,27 @@ body {
 .resume-preview {
   background: white;
   color: #000;
-  padding: 3rem 3rem;
-  max-width: 850px;
+  /* A4 dimensions at 96 DPI: 210mm × 297mm ≈ 794px × 1123px */
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 100%;
+  padding: 2.5rem 3rem;
   margin: 0 auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.4;
+  /* Prevent content from breaking the layout */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media print {
+  .resume-preview {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
 }
 
 /* Resume Header */
@@ -292,6 +309,7 @@ body {
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #000;
   padding-bottom: 0.75rem;
+  min-height: 80px;
 }
 
 .resume-name {
@@ -332,6 +350,7 @@ body {
 /* Resume Sections */
 .resume-section {
   margin-bottom: 1.5rem;
+  min-height: 50px;
 }
 
 .resume-section-title {
@@ -416,13 +435,39 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .resume-preview {
-    padding: 2rem 1.5rem;
+    width: 180mm;
+    min-height: 254mm;
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .resume-preview {
+    width: 160mm;
+    min-height: 226mm;
+    padding: 1.5rem 2rem;
   }
 
   .resume-name {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+  }
+
+  .resume-preview {
+    width: 100%;
+    min-height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .resume-name {
+    font-size: 1.75rem;
   }
 
   .resume-item-header {

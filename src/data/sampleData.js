@@ -54,6 +54,15 @@ Analyzed competitor marketing deals for reporting to marketing team`,
       location: 'Scranton, PA',
       grade: '3.84',
     },
+    {
+      id: 'edu-2',
+      institute: 'Scranton High School',
+      degree: 'High School Diploma',
+      startDate: 'September 2014',
+      endDate: 'June 2018',
+      location: 'Scranton, PA',
+      grade: '3.9',
+    },
   ],
   skills: {
     languages: [
