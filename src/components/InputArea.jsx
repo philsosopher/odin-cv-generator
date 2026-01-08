@@ -1,6 +1,7 @@
 import WorkExperienceList from './WorkExperienceList';
 import EducationList from './EducationList';
 import PersonalDetails from './PersonalDetails';
+import Skills from './Skills';
 
 const InputArea = ({ 
   activeTab, 
@@ -47,9 +48,15 @@ const InputArea = ({
           />
         );
       case 'skills':
-        return <div>Skills coming soon...</div>;
+        return (
+          <Skills 
+            skills={skills}
+            onAdd={addSkills}
+            onDelete={deleteSkills}
+          />
+        );
       default:
-        return <WorkExperienceList />;
+        return <PersonalDetails personalDetails={personalDetails} onUpdate={updatePersonalDetails} />;
     }
   };
 

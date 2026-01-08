@@ -83,10 +83,10 @@ const EditSection = ({ cvDetails, setCvDetails }) => {
         }));
     };
 
-    const handleAddSkills = (skillCategory) => {
+    const handleAddSkills = (skillCategory, skillName) => {
         const newSkillItem = {
             id: crypto.randomUUID(),
-            name: '',
+            name: skillName,
         };
         setCvDetails(prev => ({
             ...prev,
