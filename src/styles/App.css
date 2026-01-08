@@ -29,6 +29,54 @@ body {
   margin: 0;
 }
 
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.demo-btn,
+.reset-btn {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.demo-btn {
+  background-color: #646cff;
+  border-color: #646cff;
+  color: white;
+}
+
+.demo-btn:hover {
+  background-color: #535ac7;
+  border-color: #535ac7;
+}
+
+.reset-btn {
+  background-color: transparent;
+  border-color: #ec6363;
+  color: #ec6363;
+}
+
+.reset-btn:hover {
+  background-color: #ec6363;
+  color: white;
+}
+
+.demo-btn:active,
+.reset-btn:active {
+  transform: scale(0.97);
+}
+
 /* Main Section - Two Column Layout */
 .main-section {
   display: flex;
